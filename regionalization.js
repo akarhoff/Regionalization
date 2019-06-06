@@ -4,7 +4,7 @@ jq.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js";
 document.getElementsByTagName('head')[0].appendChild(jq);
 
 // Gets all user information 
-$.getJSON('https://ipapi.co/json/', function(data){
+jQuery.getJSON('https://ipapi.co/json/', function(data){
   let country = data.country;
   let region = data.region;
   if(country === "US"){
