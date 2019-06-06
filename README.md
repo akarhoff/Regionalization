@@ -31,4 +31,19 @@ $.getJSON('https://ipapi.co/json/', function(data){
 
 In this function, we're grabbing the user's country and region and adding them to variables. In this testing example, we're printing out the values to the console to confirm this function is working correctly. If you copy and paste the codes above, you should see _"This user's country is US and state is New York, so we should display DGPs."_ printed to your console.
 
+<strong>For Wordpress sites, like mastersindatascience.org, jQuery is already added to the site but we use a different syntax for Wordpress:</strong>
+
+```javascript
+jQuery.getJSON('https://ipapi.co/json/', function(data){
+  let country = data.country;
+  let region = data.region;
+  if(country === "US"){
+    jQuery("div.featured-school-multi").html("<p>This is a DGP Table</p>");
+  } else {
+    jQuery("div.featured-school-multi").html("<p>This is a short course table</p>");
+  }
+})
+```
+In the example above, we should see the featured program table on this page disappear: https://www.mastersindatascience.org/careers/data-analyst/
+
 Here is the API documentation: https://ipapi.co/api/?javascript--jquery#location-of-clients-ip
